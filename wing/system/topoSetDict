@@ -1,0 +1,33 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object topoSetDict;
+}
+
+actions
+(
+
+    {
+        name c;
+        type cellSet;
+        action new;
+        source regionToCell;
+        insidePoints ((0.1 0 0.1));
+    }
+
+    
+
+    {
+        name wingZone;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo
+        {
+            set c;
+        }
+    }
+    
+);

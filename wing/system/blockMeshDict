@@ -1,0 +1,98 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 0.01;
+
+vertices
+(
+    //front face
+
+    (22 -6 24) //bottom right
+    (22 6 24) //top right
+    (-2  6 24) //top left
+    (-2  -6 24) //bottom left
+    
+    //back face
+    (22 -6 -24) //bottom right
+    (22 6 -24) //top right
+    (-2  6 -24) //top left
+    (-2  -6 -24) //bottom left
+);
+
+blocks
+(
+    hex (3 0 4 7 2 1 5 6) (24 48 12) simpleGrading (1 1 1)
+);
+
+boundary
+(
+    overset_patch
+    {
+        type overset;
+        faces
+        (
+            (0 1 2 3)
+            (4 5 6 7)
+            (0 1 5 4)
+            (1 2 6 5)
+            (0 4 7 3)
+            (3 2 6 7)
+        );
+	
+    }
+    // primary_outlet
+    // {
+    //     type patch;
+    //     faces
+    //     (
+    //         (4 5 6 7)
+    //     );
+    // }
+    // right
+    // {
+    //     type patch;
+    //     faces
+    //     (
+    //         (0 1 5 4)
+    //     );
+    // }
+    // top
+    // {
+    //     type patch;
+    //     faces
+    //     (
+    //         (1 2 6 5)
+    //     );
+    // }
+    // bottom
+    // {
+    //     type patch;
+    //     faces
+    //     (
+    //         (0 4 7 3)
+    //     );
+    // }
+    // left
+    // {
+    //     type symmetryPlane;
+    //     faces
+    //     (
+    //         (3 2 6 7)
+    //     );
+    // }
+);
+
+// ************************************************************************* //
