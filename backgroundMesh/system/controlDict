@@ -6,6 +6,8 @@ FoamFile
     object      controlDict;
 }
 
+libs		(overset fvMotionSolvers);
+
 application     overPimpleDyMFoam;
 
 startFrom       startTime;
@@ -40,3 +42,8 @@ timeFormat      general;
 timePrecision   6;
 
 runTimeModifiable true;
+
+functions
+{
+    #include "forceCoeffs"
+}

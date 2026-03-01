@@ -27,17 +27,14 @@ gradSchemes
 
 divSchemes
 {
-    default         none;
+     // Convective term for momentum
+    div(phi,U)      Gauss linearUpwind grad(U);
 
-    div(rhoPhi,U)   Gauss linearUpwind grad(U);
-    div(U)          Gauss linear;
-    div(phi,alpha)  Gauss vanLeer;
-    div(phirb,alpha) Gauss linear;
-    div(phi,alpha.water) Gauss upwind;
-    div(phi,epsilon) Gauss upwind;
-    div(phi,k)       Gauss upwind;
-    div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear;
-    div((nuEff*dev2(T(grad(U)))))  Gauss linear;
+    // Viscous term (Laplace operator)
+    div((nu*dev2(T(grad(U))))) Gauss linear;
+
+    // Default for any other fields
+    default         none;
 }
 
 laplacianSchemes
@@ -57,7 +54,7 @@ snGradSchemes
 
 oversetInterpolation
 {
-    method         cellVolumeWeight;
+    method         inverseDistance;
 }
 
 fluxRequired
@@ -67,10 +64,10 @@ fluxRequired
     p               ;
 }
 
-oversetInterpolationSuppressed
-{
-    grad(p_rgh);
-    surfaceIntegrate(phiHbyA);
-}
+// oversetInterpolationSuppressed
+// {
+//     grad(p_rgh);
+//     surfaceIntegrate(phiHbyA);
+// }
 
 // ************************************************************************* //

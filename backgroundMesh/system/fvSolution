@@ -26,23 +26,23 @@ solvers
         maxIter         100;
     }
 
-    "alpha.water.*"
-    {
-        nAlphaCorr      3;
-        nAlphaSubCycles 2;
-        cAlpha          1;
-        icAlpha         0;
-        scAlpha         0;
+    // "alpha.water.*"
+    // {
+    //     nAlphaCorr      3;
+    //     nAlphaSubCycles 2;
+    //     cAlpha          1;
+    //     icAlpha         0;
+    //     scAlpha         0;
 
-        MULESCorr       yes;
-        nLimiterIter    5;
-        alphaApplyPrevCorr  no;
+    //     MULESCorr       yes;
+    //     nLimiterIter    5;
+    //     alphaApplyPrevCorr  no;
 
-        solver          smoothSolver;
-        smoother        symGaussSeidel;
-        tolerance       1e-8;
-        relTol          0;
-    }
+    //     solver          smoothSolver;
+    //     smoother        symGaussSeidel;
+    //     tolerance       1e-8;
+    //     relTol          0;
+    // }
 
     p_rgh
     {
