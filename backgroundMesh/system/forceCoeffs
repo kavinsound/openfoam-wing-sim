@@ -1,0 +1,24 @@
+
+
+forceCoeffs1
+{
+    type            forceCoeffs;
+    libs            (forces);
+    writeControl    writeTime;
+    writeFields     true;
+
+    patches         (wing);
+    p               p;
+    U               U;
+    rho             rhoInf;      // Indicates incompressible
+    log             true;
+    rhoInf          1;           // Required when rho = rhoInf
+    liftDir         (0 1 0);
+    dragDir         (0 0 1);
+    CofR            (0 0 0);  // Axle midpoint on ground
+    pitchAxis       (1 0 0);
+    magUInf         10;
+    lRef            0.15;          // Wheelbase length
+    Aref            0.4;          // Estimated
+    porosity        on;
+}

@@ -46,8 +46,8 @@ FoamFile
     }
     wing
     {
-        type            overset;
-        inGroups        1(overset);
+        type            wall;
+        inGroups        1(wall);
         nFaces          1556;
         startFace       296896;
     }

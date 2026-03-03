@@ -28,7 +28,7 @@ boundaryField
 
     wing
     {
-        patchType overset;
+        
         type zeroGradient;
     }
 

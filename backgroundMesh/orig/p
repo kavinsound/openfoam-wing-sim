@@ -33,7 +33,7 @@ boundaryField
 
     wing
     {
-        type    overset;
+        type    zeroGradient;
     }
 
     outlet_faces

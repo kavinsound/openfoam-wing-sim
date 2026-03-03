@@ -44,18 +44,17 @@ solvers
     //     relTol          0;
     // }
 
-    p_rgh
+    p
     {
         solver          PBiCGStab;
         preconditioner  DILU;
-        tolerance       1e-12;
+        tolerance       1e-11;
         relTol          0.01;
-        maxIter         500;
     }
 
-    p_rghFinal
+    pFinal
     {
-        $p_rgh;
+        $p;
         relTol          0;
     }
 
@@ -72,21 +71,57 @@ solvers
         relTol          0;
     }
 
-    "(U|k|epsilon)"
+    U
     {
-        solver          smoothSolver;
-        smoother        symGaussSeidel;
+        solver          PBiCGStab;
+        preconditioner  DILU;
         tolerance       1e-6;
-        relTol          0.01;
-        maxIter         200;
-        minIter         1;
-    }
-
-    "(U|k|epsilon)Final"
-    {
-        $U;
         relTol          0;
     }
+
+    // p_rgh
+    // {
+    //     solver          PBiCGStab;
+    //     preconditioner  DILU;
+    //     tolerance       1e-12;
+    //     relTol          0.01;
+    //     maxIter         500;
+    // }
+
+    // p_rghFinal
+    // {
+    //     $p_rgh;
+    //     relTol          0;
+    // }
+
+    // pcorr
+    // {
+    //     $p;
+    //     solver          PCG;
+    //     preconditioner  DIC;
+    // }
+
+    // pcorrFinal
+    // {
+    //     $pcorr;
+    //     relTol          0;
+    // }
+
+    // "(U|k|epsilon)"
+    // {
+    //     solver          smoothSolver;
+    //     smoother        symGaussSeidel;
+    //     tolerance       1e-6;
+    //     relTol          0.01;
+    //     maxIter         200;
+    //     minIter         1;
+    // }
+
+    // "(U|k|epsilon)Final"
+    // {
+    //     $U;
+    //     relTol          0;
+    // }
 }
 
 PIMPLE

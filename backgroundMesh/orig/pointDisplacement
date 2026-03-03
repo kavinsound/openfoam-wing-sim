@@ -9,41 +9,33 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       volScalarField;
-    object      zoneID;
+    class       pointVectorField;
+    object      pointDisplacement;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 0 0 0 0 0 0];
+dimensions      [0 1 0 0 0 0 0];
 
-internalField   uniform 0;
+internalField   uniform (0 0 0);
 
 boundaryField
 {
-    overset_patch
+    ".*"
     {
-        type            overset;
-        value uniform 0;
-    }
-
-    inlet
-    {
-        type zeroGradient;
-    }
-
-    outlet_faces
-    {
-        type zeroGradient;
-    }
-    mirror
-    {
-        type symmetryPlane;
+        type            uniformFixedValue;
+        uniformValue    (0 0 0);
     }
 
     wing
     {
-        type overset;
-        value uniform 0;
+        
+        type zeroGradient;
+    }
+
+    overset_patch
+    {
+        patchType       overset;
+        type            zeroGradient;
     }
 }
 
