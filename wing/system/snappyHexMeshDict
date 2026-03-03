@@ -103,7 +103,7 @@ castellatedMeshControls
 //        }
         {
             file        "wing.eMesh";
-            level       1;
+            level       3;
         }
        
     );
@@ -136,7 +136,7 @@ castellatedMeshControls
 //        }
         wing
         {
-            level       (1 2);
+            level       (2 3);
             faceType boundary;
             cellZone wingZone;
             cellZoneInside inside;
