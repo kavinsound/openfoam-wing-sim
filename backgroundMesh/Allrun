@@ -1,0 +1,13 @@
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Decompose the case
+runApplication decomposePar
+
+# Run solver in parallel using 4 cores
+mpirun -np 8 runApplication overPimpleDyMFoam -parallel
+
+# Reconstruct the case
+runApplication reconstructPar
