@@ -16,14 +16,21 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-1
+2
 (
     overset_patch
     {
         type            overset;
-        nFaces          64512;
-        startFace       2621952;
-        faces           ( ( 0 1 2 3 ) ( 4 5 6 7 ) ( 0 1 5 4 ) ( 1 2 6 5 ) ( 0 4 7 3 ) ( 3 2 6 7 ) );
+        inGroups        1(overset);
+        nFaces          16128;
+        startFace       2845388;
+    }
+    wing
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          6220;
+        startFace       2861516;
     }
 )
 

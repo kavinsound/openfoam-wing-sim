@@ -136,7 +136,7 @@ castellatedMeshControls
 //        }
         wing
         {
-            level       (1 3);
+            level       (2 2);
             faceType boundary;
             cellZone wingZone;
             cellZoneInside inside;
@@ -176,7 +176,7 @@ castellatedMeshControls
             refinementBox
             {
                 mode inside;
-                levels ((1E15 3));
+                levels ((2 2));
             }
     }
 
@@ -279,7 +279,7 @@ addLayersControls
 
     // Maximum number of snapping relaxation iterations. Should stop
     // before upon reaching a correct mesh.
-    nRelaxIter 3;
+    nRelaxIter 5;
 
     // Number of smoothing iterations of surface normals
     nSmoothSurfaceNormals 1;
@@ -344,7 +344,7 @@ meshQualityControls
     //     <0 = inside out tet,
     //      0 = flat tet
     //      1 = regular tet
-    minTetQuality 0.2; // 1e-30;
+    minTetQuality 1E-30; // 1e-30;
 
     //- Minimum face area. Set to <0 to disable.
     minArea -1;
