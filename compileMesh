@@ -6,10 +6,7 @@ cd ${0%/*} || exit 1    # Run from this directory
 
 cd wing
 
-blockMesh
-
-snappyHexMesh -overwrite
-
+./createMesh
 topoSet
 
 cd ../backgroundMesh
@@ -26,4 +23,4 @@ topoSet
 
 setFields
 
-echo checkMesh -allTopology -allGeometry >> meshCheck.log
+checkMesh -allTopology -allGeometry >> ../meshCheck.log

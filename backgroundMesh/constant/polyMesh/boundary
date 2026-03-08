@@ -22,34 +22,34 @@ FoamFile
     {
         type            patch;
         nFaces          5000;
-        startFace       1580331;
+        startFace       4325388;
     }
     outlet_faces
     {
         type            patch;
         nFaces          25000;
-        startFace       1585331;
+        startFace       4330388;
     }
     mirror
     {
         type            symmetryPlane;
         inGroups        1(symmetryPlane);
         nFaces          10000;
-        startFace       1610331;
+        startFace       4355388;
     }
     overset_patch
     {
         type            overset;
         inGroups        1(overset);
-        nFaces          4065;
-        startFace       1620331;
+        nFaces          16128;
+        startFace       4365388;
     }
     wing
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          1556;
-        startFace       1624396;
+        nFaces          6220;
+        startFace       4381516;
     }
 )
 

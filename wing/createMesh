@@ -15,4 +15,6 @@ mpirun -np 2 snappyHexMesh -overwrite
 
 reconstructParMesh
 
+rm -rf proc*
+
 #------------------------------------------------------------------------------
