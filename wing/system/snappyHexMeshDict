@@ -136,7 +136,7 @@ castellatedMeshControls
 //        }
         wing
         {
-            level       (2 2);
+            level       (1 1);
             faceType boundary;
             cellZone wingZone;
             cellZoneInside inside;
@@ -176,7 +176,7 @@ castellatedMeshControls
             refinementBox
             {
                 mode inside;
-                levels ((2 2));
+                levels ((1 1));
             }
     }
 

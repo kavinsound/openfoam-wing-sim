@@ -5,15 +5,11 @@ cd ${0%/*} || exit 1    # Run from this directory
 
 # Decompose the case]
 
-cd ..
-./compileMesh
 
-cd backgroundMesh
-
-runApplication decomposePar
+decomposePar
 
 # Run solver in parallel using 4 cores
-mpirun -np 8 runApplication overPimpleDyMFoam -parallel
+mpirun -np 8 overPimpleDyMFoam -parallel
 
 # Reconstruct the case
 runApplication reconstructPar
