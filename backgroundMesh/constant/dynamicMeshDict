@@ -27,7 +27,7 @@ multiSolidBodyMotionSolverCoeffs
         {
             origin      (0 0 0);
             amplitude   (0 0 45);
-            omega       315;
+            omega       125.66;
         }
     }
 }

@@ -16,18 +16,18 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         0.5;
+endTime         0.2;
 
-deltaT          0.001;
+deltaT          0.0001;
 
 adjustTimeStep  yes;
-maxCo           0.3;
-maxMeshCourant  0.2;
+maxCo           0.5;
+maxMeshCourant  0.3;
 maxDeltaT       0.005;   // optional but recommended
+minDeltaT	1E-6;
+writeControl    runTime;
 
-writeControl    timeStep;
-
-writeInterval   100;
+writeInterval   0.001;
 
 purgeWrite      0;
 
