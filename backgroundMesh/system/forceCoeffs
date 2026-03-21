@@ -19,6 +19,6 @@ forceCoeffs1
     pitchAxis       (1 0 0);
     magUInf         10;
     lRef            0.15;          // Wheelbase length
-    Aref            0.4;          // Estimated
-    porosity        on;
+    Aref            0.004;          // Estimated
+    porosity        off;
 }
