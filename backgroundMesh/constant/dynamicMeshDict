@@ -22,13 +22,9 @@ multiSolidBodyMotionSolverCoeffs
 {
     wingZone
     {
-        solidBodyMotionFunction oscillatingRotatingMotion;
-        oscillatingRotatingMotionCoeffs
-        {
-            origin      (0 0 0);
-            amplitude   (0 0 45);
-            omega       125.66;
-        }
+        solidBodyMotionFunction tabulated6DoFMotion;
+        CofG (0 0 0);
+        timeDataFileName "<constant>/meshMotion.dat";
     }
 }
 
