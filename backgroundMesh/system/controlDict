@@ -31,7 +31,7 @@ writeInterval   0.001;
 
 purgeWrite      0;
 
-writeFormat     binary;
+writeFormat     ascii;
 
 writePrecision  6;
 

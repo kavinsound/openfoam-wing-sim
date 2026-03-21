@@ -1,6 +1,6 @@
 
 
-forceCoeffs1
+forceCoeffs
 {
     type            forceCoeffs;
     libs            (forces);
@@ -12,12 +12,12 @@ forceCoeffs1
     U               U;
     rho             rhoInf;      // Indicates incompressible
     log             true;
-    rhoInf          1;           // Required when rho = rhoInf
+    rhoInf          1.225;           // Required when rho = rhoInf
     liftDir         (0 1 0);
     dragDir         (0 0 1);
     CofR            (0 0 0);  // Axle midpoint on ground
     pitchAxis       (1 0 0);
-    magUInf         10;
+    magUInf         1;
     lRef            0.15;          // Wheelbase length
     Aref            0.004;          // Estimated
     porosity        off;
