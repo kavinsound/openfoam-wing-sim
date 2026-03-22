@@ -2,3 +2,8 @@ backgroundMesh/constant/polyMesh
 wing/constant/polyMesh
 
 backgroundMesh/0.*/
+
+backgroundMesh/log.reconstructPar
+job.slurm
+log.50484775.err
+log.50484775.out
