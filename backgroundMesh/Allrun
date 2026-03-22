@@ -15,3 +15,5 @@ mpirun -np 8 overPimpleDyMFoam -parallel
 runApplication reconstructPar
 
 rm -rf proc*
+
+rm -rf log.reconstrucPar
