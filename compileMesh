@@ -23,4 +23,4 @@ topoSet
 
 setFields
 
-checkMesh -allTopology -allGeometry >> ../meshCheck.log
+checkMesh -allTopology -allGeometry > ../meshCheck.log

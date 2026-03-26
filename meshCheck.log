@@ -8,12 +8,12 @@
 Build  : _bd2b6720-20260127 OPENFOAM=2512 version=2512
 Arch   : "LSB;label=32;scalar=64"
 Exec   : checkMesh -allTopology -allGeometry
-Date   : Mar 21 2026
-Time   : 13:35:08
-Host   : WIN-2HBR9MLECI2
-PID    : 1983
+Date   : Mar 22 2026
+Time   : 15:40:49
+Host   : PC-KS
+PID    : 1939
 I/O    : uncollated
-Case   : /home/kavin/OpenFOAM/kavin-v2512/run/wing-sim/backgroundMesh
+Case   : /home/kavin/OpenFOAM/kavin-v2512/run/wing_test/backgroundMesh
 nProcs : 1
 trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
 memory pool : not available
@@ -32,33 +32,36 @@ Check mesh...
 Time = 0
 
 Mesh stats 
-    points:           1548475
-    faces:            4541726
-    internal faces:   4457705
-    cells:            1496888
-    faces per cell:   6.01209
+    points:           309353
+    faces:            884562
+    internal faces:   853765
+    cells:            287835
+    faces per cell:   6.03932
     boundary patches: 5
     point zones:      1
     face zones:       0
     cell zones:       1
 
 Overall number of cells of each type:
-    hexahedra:     1489559
-    prisms:        208
-    wedges:        38
+    hexahedra:     281589
+    prisms:        673
+    wedges:        76
     pyramids:      0
-    tet wedges:    46
+    tet wedges:    82
     tetrahedra:    0
-    polyhedra:     7037
+    polyhedra:     5415
     Breakdown of polyhedra by number of faces:
         faces   number of cells
-            5   42
-            6   630
-            7   352
-            8   48
-            9   5939
-           12   18
-           15   8
+            4   10
+            5   94
+            6   1271
+            7   766
+            8   218
+            9   2589
+           11   1
+           12   311
+           15   144
+           18   11
 
 Checking topology...
     Boundary definition OK.
@@ -71,17 +74,17 @@ Checking topology...
    *Number of regions: 2
     The mesh has multiple regions which are not connected by any face.
   <<Writing region information to "0/cellToRegion"
-  <<Writing region 0 (fully disconnected) with 1372000 cells to cellSet region0
-  <<Writing region 1 (fully disconnected) with 124888 cells to cellSet region1
+  <<Writing region 0 (fully disconnected) with 250000 cells to cellSet region0
+  <<Writing region 1 (fully disconnected) with 37835 cells to cellSet region1
 
 Checking patch topology for multiply connected surfaces...
                    Patch    Faces   Points  Surface topology  Bounding box
-                   inlet     9800    10011  ok (non-closed singly connected) (-0.1 -0.7 0.7) (0.6 0.7 0.7)
-            outlet_faces    49000    49351  ok (non-closed singly connected) (-0.1 -0.7 -0.7) (0.6 0.7 0.7)
-                  mirror    19600    19881  ok (non-closed singly connected) (-0.1 -0.7 -0.7) (-0.1 0.7 0.7)
-           overset_patch     4065     4075      ok (closed singly connected) (-0.0200001 -0.0600038 -0.24) (0.220002 0.0600043 0.24)
-                    wing     1556     1579      ok (closed singly connected) (-2.38419e-09 -0.00500653 -0.0392599) (0.16044 6.52958e-06 -0.00725001)
-                    ".*"    84021    84056      ok (closed singly connected) (-0.1 -0.7 -0.7) (0.6 0.7 0.7)
+                   inlet     2500     2601  ok (non-closed singly connected) (-0.1 -0.35 0.7) (0.6 0.35 0.7)
+            outlet_faces    17500    17701  ok (non-closed singly connected) (-0.1 -0.35 -0.7) (0.6 0.35 0.7)
+                  mirror     5000     5151  ok (non-closed singly connected) (-0.1 -0.35 -0.7) (-0.1 0.35 0.7)
+           overset_patch     2857     2869      ok (closed singly connected) (-0.0200047 -0.060013 -0.240001) (0.220005 0.06 0.24)
+                    wing     2940     3092      ok (closed singly connected) (-0.000212359 -0.00522839 -0.0392601) (0.160417 1.1405e-05 -0.00724832)
+                    ".*"    30797    30963      ok (closed singly connected) (-0.1 -0.35 -0.7) (0.6 0.35 0.7)
 
 
 Checking faceZone topology for multiply connected surfaces...
@@ -89,174 +92,44 @@ Checking faceZone topology for multiply connected surfaces...
 
 Checking basic cellZone addressing...
                 CellZone        Cells       Points       VolumeBoundingBox
-               wingZone       124888       136924    0.0138036 (-0.0200001 -0.0600038 -0.24) (0.220002 0.0600043 0.24)
+               wingZone        37835        46652    0.0138036 (-0.0200047 -0.060013 -0.240001) (0.220005 0.06 0.24)
 
 Checking basic pointZone addressing...
                PointZone  PointsBoundingBox
             frozenPoints       0(1e+150 1e+150 1e+150) (-1e+150 -1e+150 -1e+150)
 
 Checking geometry...
-    Overall domain bounding box (-0.1 -0.7 -0.7) (0.6 0.7 0.7)
+    Overall domain bounding box (-0.1 -0.35 -0.7) (0.6 0.35 0.7)
     Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
     Mesh has 3 solution (non-empty) directions (1 1 1)
-    Boundary openness (1.49545e-18 5.17033e-17 5.10591e-17) OK.
-    Max cell openness = 3.25506e-16 OK.
-    Max aspect ratio = 12.5426 OK.
-    Minimum face area = 4.01807e-07. Maximum face area = 0.000102606.  Face area magnitudes OK.
-    Min volume = 3.74189e-10. Max volume = 1.00353e-06.  Total volume = 1.3858.  Cell volumes OK.
-    Mesh non-orthogonality Max: 39.7236 average: 1.92945
+    Boundary openness (-7.7978e-18 3.32432e-17 1.1109e-17) OK.
+    Max cell openness = 3.26165e-16 OK.
+    Max aspect ratio = 21.6377 OK.
+    Minimum face area = 1.07886e-07. Maximum face area = 0.000196.  Face area magnitudes OK.
+    Min volume = 8.12215e-11. Max volume = 2.744e-06.  Total volume = 0.699804.  Cell volumes OK.
+    Mesh non-orthogonality Max: 53.9485 average: 3.6684
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 0.48318 OK.
+    Max skewness = 2.65149 OK.
     Coupled point location match (average 0) OK.
     Face tets OK.
-    Min/max edge length = 0.000415361 0.010229 OK.
-  <<Writing 42 near (closer than 2.1e-06 apart) points to set nearPoints
-   *There are 2 faces with concave angles between consecutive edges. Max concave angle = 18.3083 degrees.
-  <<Writing 2 faces with concave angles to set concaveFaces
-    Face flatness (1 = flat, 0 = butterfly) : min = 0.866684  average = 0.999998
+    Min/max edge length = 3.64552e-05 0.014 OK.
+   *There are 45 faces with concave angles between consecutive edges. Max concave angle = 18.678 degrees.
+  <<Writing 45 faces with concave angles to set concaveFaces
+    Face flatness (1 = flat, 0 = butterfly) : min = 0.859911  average = 0.999973
     All face flatness OK.
-    Cell determinant (wellposedness) : minimum: 0.00135093 average: 0.995807
-    Cell determinant check OK.
- ***Concave cells (using face planes) found, number of cells: 3575
-  <<Writing 3575 concave cells to set concaveCells
-    Face interpolation weight : minimum: 0.0512027 average: 0.498949
-    Face interpolation weight check OK.
-    Face volume ratio : minimum: 0.0351976 average: 0.994608
+    Cell determinant (wellposedness) : minimum: 0.000164105 average: 1.05318
+ ***Cells with small determinant (< 0.001) found, number of cells: 9
+  <<Writing 9 under-determined cells to set underdeterminedCells
+ ***Concave cells (using face planes) found, number of cells: 3363
+  <<Writing 3363 concave cells to set concaveCells
+    Face interpolation weight : minimum: 0.0343871 average: 0.49555
+ ***Faces with small interpolation weight (< 0.05) found, number of faces: 2
+  <<Writing 2 faces with low interpolation weights to set lowWeightFaces
+    Face volume ratio : minimum: 0.0233938 average: 0.978195
     Face volume ratio check OK.
 
-Failed 1 mesh checks.
-
-End
-
-/*---------------------------------------------------------------------------*\
-| =========                 |                                                 |
-| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  2512                                  |
-|   \\  /    A nd           | Website:  www.openfoam.com                      |
-|    \\/     M anipulation  |                                                 |
-\*---------------------------------------------------------------------------*/
-Build  : _bd2b6720-20260127 OPENFOAM=2512 version=2512
-Arch   : "LSB;label=32;scalar=64"
-Exec   : checkMesh -allTopology -allGeometry
-Date   : Mar 21 2026
-Time   : 14:24:48
-Host   : WIN-2HBR9MLECI2
-PID    : 2578
-I/O    : uncollated
-Case   : /home/kavin/OpenFOAM/kavin-v2512/run/wing-sim/backgroundMesh
-nProcs : 1
-trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
-memory pool : not available
-fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
-allowSystemOperations : Allowing user-supplied system call operations
-
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-Create time
-
-Create mesh for time = 0
-
-Check mesh...
-    Enabling all (cell, face, edge, point) topology checks.
-    Enabling all geometry checks.
-
-Time = 0
-
-Mesh stats 
-    points:           1548475
-    faces:            4541726
-    internal faces:   4457705
-    cells:            1496888
-    faces per cell:   6.01209
-    boundary patches: 5
-    point zones:      1
-    face zones:       0
-    cell zones:       1
-
-Overall number of cells of each type:
-    hexahedra:     1489559
-    prisms:        208
-    wedges:        38
-    pyramids:      0
-    tet wedges:    46
-    tetrahedra:    0
-    polyhedra:     7037
-    Breakdown of polyhedra by number of faces:
-        faces   number of cells
-            5   42
-            6   630
-            7   352
-            8   48
-            9   5939
-           12   18
-           15   8
-
-Checking topology...
-    Boundary definition OK.
-    Cell to face addressing OK.
-    Point usage OK.
-    Upper triangular ordering OK.
-    Face vertices OK.
-    Topological cell zip-up check OK.
-    Face-face connectivity OK.
-   *Number of regions: 2
-    The mesh has multiple regions which are not connected by any face.
-  <<Writing region information to "0/cellToRegion"
-  <<Writing region 0 (fully disconnected) with 1372000 cells to cellSet region0
-  <<Writing region 1 (fully disconnected) with 124888 cells to cellSet region1
-
-Checking patch topology for multiply connected surfaces...
-                   Patch    Faces   Points  Surface topology  Bounding box
-                   inlet     9800    10011  ok (non-closed singly connected) (-0.1 -0.7 0.7) (0.6 0.7 0.7)
-            outlet_faces    49000    49351  ok (non-closed singly connected) (-0.1 -0.7 -0.7) (0.6 0.7 0.7)
-                  mirror    19600    19881  ok (non-closed singly connected) (-0.1 -0.7 -0.7) (-0.1 0.7 0.7)
-           overset_patch     4065     4075      ok (closed singly connected) (-0.0200001 -0.0600038 -0.24) (0.220002 0.0600043 0.24)
-                    wing     1556     1579      ok (closed singly connected) (-2.38419e-09 -0.00500653 -0.0392599) (0.16044 6.52958e-06 -0.00725001)
-                    ".*"    84021    84056      ok (closed singly connected) (-0.1 -0.7 -0.7) (0.6 0.7 0.7)
-
-
-Checking faceZone topology for multiply connected surfaces...
-    No faceZones found.
-
-Checking basic cellZone addressing...
-                CellZone        Cells       Points       VolumeBoundingBox
-               wingZone       124888       136924    0.0138036 (-0.0200001 -0.0600038 -0.24) (0.220002 0.0600043 0.24)
-
-Checking basic pointZone addressing...
-               PointZone  PointsBoundingBox
-            frozenPoints       0(1e+150 1e+150 1e+150) (-1e+150 -1e+150 -1e+150)
-
-Checking geometry...
-    Overall domain bounding box (-0.1 -0.7 -0.7) (0.6 0.7 0.7)
-    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
-    Mesh has 3 solution (non-empty) directions (1 1 1)
-    Boundary openness (1.49545e-18 5.17033e-17 5.10591e-17) OK.
-    Max cell openness = 3.25506e-16 OK.
-    Max aspect ratio = 12.5426 OK.
-    Minimum face area = 4.01807e-07. Maximum face area = 0.000102606.  Face area magnitudes OK.
-    Min volume = 3.74189e-10. Max volume = 1.00353e-06.  Total volume = 1.3858.  Cell volumes OK.
-    Mesh non-orthogonality Max: 39.7236 average: 1.92945
-    Non-orthogonality check OK.
-    Face pyramids OK.
-    Max skewness = 0.48318 OK.
-    Coupled point location match (average 0) OK.
-    Face tets OK.
-    Min/max edge length = 0.000415361 0.010229 OK.
-  <<Writing 42 near (closer than 2.1e-06 apart) points to set nearPoints
-   *There are 2 faces with concave angles between consecutive edges. Max concave angle = 18.3083 degrees.
-  <<Writing 2 faces with concave angles to set concaveFaces
-    Face flatness (1 = flat, 0 = butterfly) : min = 0.866684  average = 0.999998
-    All face flatness OK.
-    Cell determinant (wellposedness) : minimum: 0.00135093 average: 0.995807
-    Cell determinant check OK.
- ***Concave cells (using face planes) found, number of cells: 3575
-  <<Writing 3575 concave cells to set concaveCells
-    Face interpolation weight : minimum: 0.0512027 average: 0.498949
-    Face interpolation weight check OK.
-    Face volume ratio : minimum: 0.0351976 average: 0.994608
-    Face volume ratio check OK.
-
-Failed 1 mesh checks.
+Failed 3 mesh checks.
 
 End
 
