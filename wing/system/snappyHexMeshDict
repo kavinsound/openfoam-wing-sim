@@ -103,7 +103,7 @@ castellatedMeshControls
 //        }
         {
             file        "wing.eMesh";
-            level       3;
+            level       2;
         }
        
     );
