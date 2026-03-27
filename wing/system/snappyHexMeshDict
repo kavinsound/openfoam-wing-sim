@@ -176,7 +176,7 @@ castellatedMeshControls
             refinementBox
             {
                 mode inside;
-                levels ((1 1));
+                levels ((1 2));
             }
     }
 
@@ -251,7 +251,7 @@ addLayersControls
     {
         "wing.*"
         {
-            nSurfaceLayers 5;
+            nSurfaceLayers 2;
         }
     }
 
@@ -262,7 +262,7 @@ addLayersControls
     // is the thickness of the layer furthest away from the wall.
     // Relative to undistorted size of cell outside layer.
     // See relativeSizes parameter.
-    finalLayerThickness 0.2;
+    finalLayerThickness 0.1;
 
     // Minimum thickness of cell layer. If for any reason layer
     // cannot be above minThickness do not add layer.
@@ -279,14 +279,14 @@ addLayersControls
 
     // When not to extrude surface. 0 is flat surface, 90 is when two faces
     // are perpendicular
-    featureAngle 120;
+    featureAngle 60;
 
     // Maximum number of snapping relaxation iterations. Should stop
     // before upon reaching a correct mesh.
     nRelaxIter 5;
 
     // Number of smoothing iterations of surface normals
-    nSmoothSurfaceNormals 1;
+    nSmoothSurfaceNormals 3;
 
     // Number of smoothing iterations of interior mesh movement direction
     nSmoothNormals 3;
