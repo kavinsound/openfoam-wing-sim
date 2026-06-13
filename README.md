@@ -16,7 +16,7 @@ An advanced, transient computational fluid dynamics (CFD) study analyzing the hi
 
 * **CFD Engine:** OpenFOAM v2512
 * **Governing Equations:** Unsteady Incompressible Navier-Stokes
-* **Mesh Methodology:** `blockMesh` background domain overlaid with a high-resolution component mesh wrapping the dragonfly wing geometry (`topoSet` & `oversetMeshBlended`).
+* **Mesh Methodology:** `blockMesh` background domain overlaid with a high-resolution component mesh wrapping the dragonfly wing geometry (`snappyHexMesh` & `mergeMeshes`).
 * **Kinematics:** Implemented prescribed dynamic pitching and translation to mirror biological wing stroke frequencies.
 
 ---
