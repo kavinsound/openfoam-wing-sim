@@ -8,12 +8,12 @@
 Build  : _bd2b6720-20260127 OPENFOAM=2512 version=2512
 Arch   : "LSB;label=32;scalar=64"
 Exec   : checkMesh -writeSets vtk -allTopology -allGeometry
-Date   : Mar 26 2026
-Time   : 20:11:41
+Date   : Jun 11 2026
+Time   : 12:22:23
 Host   : PC-KS
-PID    : 3661
+PID    : 1227
 I/O    : uncollated
-Case   : /home/kavin/OpenFOAM/kavin-v2512/run/wing_test/backgroundMesh
+Case   : /home/kavin/wing_model/openfoam-wing-sim/backgroundMesh
 nProcs : 1
 trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
 memory pool : not available
