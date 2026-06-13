@@ -29,6 +29,13 @@ Traditional steady-state aerodynamics fail at the low Reynolds numbers ($Re \app
 2. **Low-Pressure Lift Core:** The center of this vortex acts as a low-velocity "dead zone," establishing an intense localized low-pressure field that generates the primary lift force.
 3. **Spanwise Flow & Vortex Shedding:** The model accurately captures the three-dimensional spanwise velocity components that stabilize the vortex before it cyclically sheds into the wake during stroke turnaround.
 
+### 📈 Aerodynamic Coefficients ($C_l$ & $C_d$) over Time
+The force coefficients were extracted dynamically during runtime to evaluate the transient aerodynamic efficiency of the kinematics. The cyclical peaks correspond perfectly with the stroke frequencies and vortex-shedding intervals.
+
+<p align="center">
+  <img src="./coefficient_plot.png" width="650" alt="Aerodynamic Coefficients Plot">
+</p>
+
 ---
 
 ## 📊 Data Visualization & Post-Processing (ParaView)
@@ -45,20 +52,25 @@ To rigorously analyze the transient vortex shedding lifecycle, a dual-pipeline v
 | :---: | :---: | :---: |
 | Maximum lift generation; stable, tight vortex roll-up over the wing chord. | Kinematics change; the primary vortex detaches smoothly into the wake. | Flow re-attaches; an alternating vortex structure instantly develops. |
 
-*(Tip: Insert your optimized ParaView animation GIF here to showcase your data presentation skills!)*
+<p align="center">
+  <img src="./wing_animation.gif" width="600" alt="Dragonfly Wing Vortex Shedding">
+</p>
 
 ---
 
-## 🏃 Replication and Workflow Execution
+---
 
-The repository structure follows rigorous OpenFOAM case management practices (`0/`, `constant/`, `system/`). The pipeline is fully automated and can be initialized with the following execution sequence:
+## 🏃 HPC Automation & Workflow Execution
 
+To optimize computational throughput on HPC clusters, the simulation pipeline is completely automated using modular **Bash scripting**. The repository includes an orchestration architecture that handles geometry preparation, meshing, and multi-core parallel processing execution cleanly.
+
+### Automated Execution Sequence:
 ```bash
-# 1. Clean environment and purge previous time directories
-foamCleanTutorials
+# 1. Clean environment, purge previous time directories, and clear cached data
+./Allclean
 
-# 2. Build background and component overset meshes
-compileMesh
+# 2. Automated mesh generation (Background & Overset Component meshes)
+./compileMesh
 
-# 4. Execute the transient moving-mesh solver (background processing)
-backgroundMesh/Allrun
+# 4. Execute the transient moving-mesh solver in parallel using MPI
+./backgroundMesh/Allrun
